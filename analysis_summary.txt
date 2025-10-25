@@ -1,0 +1,4 @@
+Seismic Risk Analysis — Summary
+Dataset shape: (30157, 13)
+Model: RandomForestClassifier (baseline)
+Accuracy: 0.8307

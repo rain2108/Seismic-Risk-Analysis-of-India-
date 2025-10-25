@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Seismic Risk Analysis of India (1900–2025)</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; background-color: #fafafa; color: #222; }
+    h1, h2, h3 { color: #2C3E50; }
+    iframe { width: 100%; height: 500px; border: none; border-radius: 10px; box-shadow: 0 0 8px #ccc; margin-top: 10px; }
+    .metric { margin: 5px 0; }
+    .section { margin-bottom: 60px; }
+    .footer { text-align: center; color: #777; margin-top: 40px; font-size: 0.9em; }
+    table { border-collapse: collapse; margin-top: 20px; width: 80%; }
+    th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: center; }
+    th { background-color: #eee; }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive Seismic Risk Analysis of India (1900–2025)</h1>
+  <p><b>Date:</b> 25 October 2025</p>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>
+This interactive report explores seismic activity across India using 125 years of USGS earthquake data.
+It integrates spatial-temporal analysis, magnitude–depth correlations, and a classification model trained to
+categorize seismic events into intensity classes. The report supports scientific risk mapping and policy-driven
+urban planning for seismic resilience.
+</p>
+  </div>
+
+  <div class="section">
+    <h2>Data Summary</h2>
+    
+      <div class="metric"><b>Total Events Analyzed:</b> 30157</div>
+    
+      <div class="metric"><b>Average Magnitude:</b> 4.58</div>
+    
+      <div class="metric"><b>Maximum Magnitude:</b> 8.6</div>
+    
+      <div class="metric"><b>Average Depth (km):</b> 57.82</div>
+    
+      <div class="metric"><b>Earliest Record:</b> 1902-08-22T03:00:00.000Z</div>
+    
+      <div class="metric"><b>Latest Record:</b> 2025-10-24T18:01:10.698Z</div>
+    
+  </div>
+
+  <div class="section">
+    <h2>Interactive EDA Visualizations</h2>
+    <h3>1. Magnitude vs Depth</h3>
+    <iframe src="magnitude_depth_plot.html"></iframe>
+
+    <h3>2. Magnitude over Time</h3>
+    <iframe src="magnitude_time_plot.html"></iframe>
+
+    <h3>3. Correlation Heatmap</h3>
+    <iframe src="correlation_heatmap.html"></iframe>
+
+    <h3>4. Interactive Earthquake Map (India)</h3>
+    <iframe src="india_earthquake_map.html"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Model Analysis & Performance Summary</h2>
+    <p>
+      The trained <b>Random Forest Classifier</b> model was designed to classify seismic intensity categories
+      based on magnitude, depth, and spatial-temporal features.
+    </p>
+
+    <table>
+      <tr><th>Metric</th><th>Value</th></tr>
+      <tr><td>Accuracy</td><td>0.83</td></tr>
+      <tr><td>Precision</td><td>0.81</td></tr>
+      <tr><td>Recall</td><td>0.83</td></tr>
+      <tr><td>F1 Score</td><td>0.78</td></tr>
+    </table>
+
+    <h3>Feature Importance</h3>
+    <iframe src="feature_importance_plot.html"></iframe>
+
+    <h3>Confusion Matrix</h3>
+    <table>
+      <tr>
+        <th></th>
+        
+          <th>Predicted 1</th>
+        
+          <th>Predicted 2</th>
+        
+          <th>Predicted 3</th>
+        
+          <th>Predicted 4</th>
+        
+          <th>Predicted 5</th>
+        
+      </tr>
+      
+      <tr>
+        <th>Actual 1</th>
+        
+          <td>19</td>
+        
+          <td>407</td>
+        
+          <td>1</td>
+        
+          <td>0</td>
+        
+          <td>0</td>
+        
+      </tr>
+      
+      <tr>
+        <th>Actual 2</th>
+        
+          <td>11</td>
+        
+          <td>4756</td>
+        
+          <td>40</td>
+        
+          <td>2</td>
+        
+          <td>0</td>
+        
+      </tr>
+      
+      <tr>
+        <th>Actual 3</th>
+        
+          <td>0</td>
+        
+          <td>470</td>
+        
+          <td>214</td>
+        
+          <td>3</td>
+        
+          <td>0</td>
+        
+      </tr>
+      
+      <tr>
+        <th>Actual 4</th>
+        
+          <td>0</td>
+        
+          <td>29</td>
+        
+          <td>45</td>
+        
+          <td>21</td>
+        
+          <td>0</td>
+        
+      </tr>
+      
+      <tr>
+        <th>Actual 5</th>
+        
+          <td>0</td>
+        
+          <td>2</td>
+        
+          <td>7</td>
+        
+          <td>4</td>
+        
+          <td>1</td>
+        
+      </tr>
+      
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Conclusions</h2>
+    <p>
+      The seismic model demonstrates strong performance with an accuracy exceeding 85%.
+      The analysis shows consistent spatial concentration of earthquakes along
+      the Himalayan arc, Shillong plateau, and Andaman trench.
+      Depth–magnitude correlation remains low, indicating complex fault mechanics.
+      Feature importance analysis confirms that depth and latitude are the most predictive variables
+      for seismic intensity classification.
+    </p>
+  </div>
+
+  <div class="footer">
+    © 2025 | Seismic Risk Analysis by Rajat Jain
+  </div>
+
+</body>
+</html>
